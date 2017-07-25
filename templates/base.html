@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
     <head>
@@ -7,9 +6,23 @@
     </head>
   <body>
 
-  <a href="http://127.0.0.1:5000/">Home</a> <a href="http://127.0.0.1:5000/new_post">New Post</a>
-  <br />
-  <br />
+<!-- FLASH MESSAGE AREA ABOVE THE WEBSITE SO IT DOES NOT INTERFERE WITH LAYOUT -->
+{% with messages = get_flashed_messages(with_categories=True) %}
+    <div>
+      {% for category,message in messages %}
+        <li class="{{category}}">{{message}}</li>
+      {% endfor %}
+    </div>
+{% endwith %}
+
+<!-- NAV BAR LINKS -->
+<div class="navbar">
+  <a class="link" href="http://127.0.0.1:5000/">Home</a>
+  <a class="link" href="http://127.0.0.1:5000/blogs">All Posts</a>
+  <a class="link" href="http://127.0.0.1:5000/new_post">New Post</a>
+  <a class="link" href="http://127.0.0.1:5000/login">Login</a>
+  <a class="link" href="http://127.0.0.1:5000/logout">Logout</a>
+</div>
 
     {%  block content  %}
     {%  endblock  %}

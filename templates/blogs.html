@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>All Blog Poster's</h1>
+
+<!-- CHECK TO SEE IF THERE ARE ANY BLOGS IN THE BLOGS CLASS -->
+{% if blogs | length == 0  %}
+  <p>
+    No users yet...
+  </p>
+
+<!-- IF YES, THEN RUN A LOOP TO DISPLAY ALL OF THE BLOG POSTS -->
+{%  else  %}
+<div class="all_blog">
+  {% for blog in blogs %}
+        <div class="all_blog_entries">
+          <a class="title" href="http://127.0.0.1:5000/blogs?id={{blog.id}}">{{blog.title}}</a>
+          <div>{{blog.content}}</div>
+          <div>Written by: <a class="anchorlink" href="/blogs?user={{blog.owner.id}}&username={{blog.owner.username}}">{{blog.owner.username}}</a></div>
+        </div>
+  {% endfor %}
+</div>
+
+{% endif %}
+
+<hr />
+
+
+
+{% endblock %}

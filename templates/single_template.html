@@ -1,9 +1,17 @@
+
 {% extends "base.html" %}
 
 {% block content %}
 
-{{blogs.title}}
-{{blogs.content}}
+<h1>{{blogs.title}}</h1>
 
+<div class="all_blog">
+  <div class="title">
+    <div class="content">{{blogs.content}}</div>
+  </div>
+  <div class="anchorlink">
+    Written by: <a href="/blogs?user={{blogs.owner.id}}&username={{blogs.owner.username}}">{{blogs.owner.username}}</a>
+  </div>
+</div>
 
 {% endblock %}

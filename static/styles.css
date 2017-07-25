@@ -1,0 +1,76 @@
+* {
+  font-family: Garamond;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 10em;
+}
+
+h1 {
+  padding-left: 1%;
+}
+
+.content {
+  font-size: 1.25em;
+  margin-bottom: 1%;
+}
+
+.title {
+  font-size: 1.75em;
+  margin-left: .5%;
+  padding:1%;
+  padding-left:0%;
+
+}
+
+.anchorlink {
+  font-size: .75em;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #000000;
+  color: white;
+  margin-bottom: 2%;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 1%;
+}
+
+.link:hover {
+  background-color: white;
+  color: #333333;
+}
+
+.message {
+  background-color: gray;
+  color: white;
+  margin:0;
+  padding: 1%;
+  list-style: none;
+}
+
+.all_blog {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+}
+
+.all_blog_entries {
+  display: flex;
+  flex-direction: column;:
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
