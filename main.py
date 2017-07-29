@@ -119,9 +119,14 @@ def register():
         verify = request.form['verify']
 
         #check to make sure form isnt blank, flash message if it is
-        if (username == '' or password == '' or verify == '') or (password != verify):
+        if username == '' or password == '' or verify == '':
             flash('You did not fill out all of the fields or your passwords did not match, please try again :)')
             return render_template('register.html', username=username)
+
+        if password != verify:
+            flash('Your passwords dont match, please try again :)')
+            return render_template('register.html', username=username)
+
 
         #if user is registered create variable to check
         existing_user = User.query.filter_by(username=username).first()
